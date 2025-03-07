@@ -1,11 +1,22 @@
-function submitApplication() {
-    event.preventDefault();
+// index.js
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("signup-form");
+    const message = document.getElementById("message");
 
-    var form = document.getElementById("signupForm");
-    var teamNameInput = document.getElementById("teamName");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-    var teamName = teamNameInput.value;
-    alert("Thank you for signing up, " + teamName + "!");
-
-    form.reset();
-};
+        if (name && email && password) {
+            message.textContent = "Thank you for signing up, " + name + "!";
+            message.style.color = "green";
+            form.reset();
+        } else {
+            message.textContent = "Please fill out all fields.";
+            message.style.color = "red";
+        }
+    });
+});
