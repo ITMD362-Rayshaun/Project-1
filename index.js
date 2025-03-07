@@ -1,20 +1,22 @@
-const formElem = document.querySelector("form");
-const rightSection = document.querySelector(".right-section");
+// index.js
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("signup-form");
+    const message = document.getElementById("message");
 
-formElem.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const formObject = Object.fromEntries(formData.entries());
-  console.log(formObject);
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-  rightSection.innerHTML = `
-
-  
-    <h1 class="completed-header">Thank you for Signing Up ${formObject.first_name}!</h1>
-    <p class="email-confirmation">
-        We've sent you an email to ${formData.email}. Click the link in there to
-        verify your email.
-    </p>
-  
-  `;
+        if (name && email && password) {
+            message.textContent = "Thank you for signing up, " + name + "!";
+            message.style.color = "green";
+            form.reset();
+        } else {
+            message.textContent = "Please fill out all fields.";
+            message.style.color = "red";
+        }
+    });
 });
