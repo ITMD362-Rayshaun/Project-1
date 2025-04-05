@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serene Spaces Sign-Up</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <script src="index.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>"Design your Future of Transquility - Join Serebe Spaces Today"</h1>
-        <p>Your Journey Starts here, Start Now.</p>
-        <form id="signup-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+      <h1>"Design Your Future of Tranquility – Join Serene Spaces Today"</h1>
+      <p>Your journey starts here. Start now.</p>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+      <form
+        id="signup-form"
+        method="post"
+        action="#"
+        autocomplete="on"
+      >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-            <button type="submit">Sign Up</button>
-        </form>
-        <p id="message"></p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <p id="message"></p>
     </div>
-</body>
+  </body>
 </html>
